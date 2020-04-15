@@ -21,11 +21,11 @@ function initMap(videoList) {
 
 function getVideos() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open('GET', 'http://localhost:3000');
+    xmlHttp.open('GET', 'http://localhost:3000/videos');
     xmlHttp.send();
     xmlHttp.onreadystatechange = (e) => {
-        let videos = JSON.parse(xmlHttp.responseText).videos;
-        console.log(videos);
+        let videos = JSON.parse(xmlHttp.responseText);
+        console.log('videos:', videos);
         initMap(videos);
     }
 }
